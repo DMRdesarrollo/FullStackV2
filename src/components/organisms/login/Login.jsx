@@ -188,7 +188,7 @@ const Login = () => {
 
         </form>
 
-        {/* DATOS DE PRUEBA */}
+        {/* DATOS DE PRUEBA ingreso */}
         <div className="mt-10 text-center text-slate-500 text-sm">
           <p className="font-semibold text-slate-600">Datos de prueba:</p>
           <p>Email: <span className="font-medium">andres@example.com</span></p>
