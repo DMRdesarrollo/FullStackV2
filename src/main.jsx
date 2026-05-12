@@ -12,7 +12,7 @@ import Checkout from "./components/organisms/checkout/Checkout"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-     <HashRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Navigate to="/gallery" replace />} />
@@ -25,6 +25,6 @@ createRoot(document.getElementById('root')).render(
           <Route path="checkout" element={<Checkout />} />
         </Route>
       </Routes>
-     </HashRouter>
+    </BrowserRouter>
   </StrictMode>,
 )
