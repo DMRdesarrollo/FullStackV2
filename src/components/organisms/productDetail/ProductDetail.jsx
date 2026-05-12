@@ -137,7 +137,7 @@ export default function ProductDetail() {
                                 className={`w-full py-3 rounded-xl font-semibold text-white text-lg transition-all duration-300 ${
                                     added
                                         ? 'bg-green-500 scale-95'
-                                        : 'bg-gradient-to-r from-purple-500 via-purple-600 to-pink-500 hover:opacity-90 hover:shadow-lg hover:shadow-purple-200 active:scale-95'
+                                        : 'bg-[#001F3F] hover:bg-[#001737]'
                                 }`}
                             >
                                 {added ? '✓ Agregado al carrito' : 'Agregar al carrito'}

@@ -41,7 +41,7 @@ export default function NavBar() {
             to="/" 
             className="flex items-center space-x-2 text-2xl font-bold hover:opacity-80 transition-opacity"
           >
-            <span className="bg-gradient-to-r from-purple-500 via-purple-600 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#002147] via-[#00306B] to-[#0047A3] bg-clip-text text-transparent">
               DG - Digital Store
             </span>
           </Link>
@@ -57,7 +57,7 @@ export default function NavBar() {
                     : 'text-gray-600 border-transparent hover:text-gray-900 hover:border-gray-300'
                 }`}
               >
-                Gallery
+                Galería
               </Link>
             </li>
             <li>
@@ -69,7 +69,7 @@ export default function NavBar() {
                     : 'text-gray-600 border-transparent hover:text-gray-900 hover:border-gray-300'
                 }`}
               >
-                Cart ({totalItems})
+                Carrito ({totalItems})
               </Link>
             </li>
             {loggedInUser ? (
@@ -82,7 +82,7 @@ export default function NavBar() {
                       : 'text-gray-600 border-transparent hover:text-gray-900 hover:border-gray-300'
                   }`}
                 >
-                  Profile
+                  Perfil
                 </Link>
               </li>
             ) : (
