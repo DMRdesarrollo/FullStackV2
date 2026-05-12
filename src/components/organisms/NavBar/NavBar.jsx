@@ -42,7 +42,7 @@ export default function NavBar() {
             className="flex items-center space-x-2 text-2xl font-bold hover:opacity-80 transition-opacity"
           >
             <span className="bg-gradient-to-r from-purple-500 via-purple-600 to-pink-500 bg-clip-text text-transparent">
-              MyStore
+              DG - Digital Store
             </span>
           </Link>
 
