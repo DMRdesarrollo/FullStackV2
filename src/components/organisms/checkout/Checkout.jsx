@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import useCartStore from "../../../store/cartStore";
 
 export default function Checkout() {
-  // Checkout simulado — solo estilos y textos personalizados
   const items = useCartStore((state) => state.items);
   const getTotalPrice = useCartStore((state) => state.getTotalPrice);
   const clearCart = useCartStore((state) => state.clearCart);
@@ -143,11 +142,18 @@ export default function Checkout() {
 
           <div className="space-y-3 mb-4">
             {items.map(({ product, quantity }) => (
-              <div key={product.id} className="flex justify-between text-sm">
-                <span className="text-gray-700">
-                  {product.title} <span className="text-gray-500">x {quantity}</span>
+              <div
+                key={product.id}
+                className="flex items-start justify-between text-sm gap-3"
+              >
+                {/* Nombre del producto: ocupa el espacio y envuelve */}
+                <span className="flex-1 text-gray-700 break-words whitespace-normal leading-snug">
+                  {product.title}
+                  <span className="text-gray-500"> x {quantity}</span>
                 </span>
-                <span className="font-medium text-gray-900">
+
+                {/* Precio: no se encoge, se mantiene a la derecha */}
+                <span className="font-medium text-gray-900 text-right shrink-0">
                   ${(Number(product.price) * Number(quantity)).toFixed(2)}
                 </span>
               </div>

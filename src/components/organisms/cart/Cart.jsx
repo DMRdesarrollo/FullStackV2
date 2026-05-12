@@ -19,14 +19,11 @@ export default function Cart() {
 
   const subtotal = getTotalPrice();
 
-  // Impuestos (IVA 19%)
   const taxRate = 0.19;
   const taxes = subtotal * taxRate;
 
-  // Envío
   const shippingCost = shippingMethod === "express" ? 19.99 : 9.99;
 
-  // Cupones disponibles
   const validCoupons = {
     DESCUENTO10: 0.10,
     DESCUENTO20: 0.20,
@@ -42,12 +39,9 @@ export default function Cart() {
     setCouponApplied(code);
   };
 
-  // Cálculo final
   const discount = useMemo(() => {
     if (!couponApplied) return 0;
-
     if (couponApplied === "ENVIOGRATIS") return 0;
-
     const rate = validCoupons[couponApplied];
     return subtotal * rate;
   }, [couponApplied, subtotal]);
@@ -95,22 +89,31 @@ export default function Cart() {
             const itemSubtotal = Number(product.price) * Number(quantity);
 
             return (
-              <article key={product.id} className="p-4 flex gap-4 items-center">
+              <article
+                key={product.id}
+                className="p-4 flex gap-4 items-start"
+              >
                 <img
                   src={resolvedImage}
                   alt={product.title}
-                  className="w-20 h-20 object-cover rounded-lg border border-gray-200"
+                  className="w-20 h-20 object-cover rounded-lg border border-gray-200 shrink-0"
                 />
 
+                {/* Contenedor de texto: ocupa y envuelve */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-semibold text-gray-900 truncate">{product.title}</h3>
-                  <p className="text-sm text-gray-500">${Number(product.price).toFixed(2)} c/u</p>
+                  <h3 className="font-semibold text-gray-900 break-words whitespace-normal leading-snug">
+                    {product.title}
+                  </h3>
+                  <p className="text-sm text-gray-500">
+                    ${Number(product.price).toFixed(2)} c/u
+                  </p>
                   <p className="text-sm font-semibold text-gray-800 mt-1">
                     Subtotal: ${itemSubtotal.toFixed(2)}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-2">
+                {/* Controles de cantidad */}
+                <div className="flex items-center gap-2 shrink-0">
                   <button
                     type="button"
                     onClick={() => decrementItem(product.id)}
@@ -118,7 +121,9 @@ export default function Cart() {
                   >
                     -
                   </button>
-                  <span className="w-8 text-center text-sm font-semibold">{quantity}</span>
+                  <span className="w-8 text-center text-sm font-semibold">
+                    {quantity}
+                  </span>
                   <button
                     type="button"
                     onClick={() => incrementItem(product.id)}
@@ -128,10 +133,11 @@ export default function Cart() {
                   </button>
                 </div>
 
+                {/* Botón quitar */}
                 <button
                   type="button"
                   onClick={() => removeItem(product.id)}
-                  className="text-sm text-red-600 hover:text-red-700"
+                  className="text-sm text-red-600 hover:text-red-700 shrink-0"
                 >
                   Quitar
                 </button>
