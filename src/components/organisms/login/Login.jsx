@@ -57,7 +57,7 @@ const Login = () => {
         {/* Header */}
         <div className="flex flex-col items-center mb-12">          
           <h1 className="text-4xl font-bold text-slate-800 mb-2">Bienvenido!</h1>
-          <p className="text-slate-400 text-lg">Ingrese sus credenciales para ingresar</p>
+          <p className="text-slate-400 text-lg">Ingrese sus credenciales para acceder</p>
         </div>
 
         {error && (
