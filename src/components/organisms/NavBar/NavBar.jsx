@@ -31,7 +31,7 @@ export default function NavBar() {
   const hideMenuOnRoutes = ["/login", "/register"];
   const shouldHideMenu = hideMenuOnRoutes.includes(location.pathname);
 
-  // Mientras carga la sesión, no mostrar nada
+  // Mientras carga la sesión, no mostrar datos
   if (loading) return null;
 
   const handleLogout = async () => {
@@ -135,7 +135,7 @@ export default function NavBar() {
                           : 'text-gray-600 border-transparent hover:text-gray-900 hover:border-gray-300'
                       }`}
                     >
-                      Register
+                      Registrarse
                     </Link>
                   </li>
                 </>
