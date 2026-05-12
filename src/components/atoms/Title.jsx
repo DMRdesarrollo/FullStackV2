@@ -15,7 +15,8 @@ function Title({ title }) {
           /* Color del texto (Azul Marino Profundo) */
           text-[color:#092556]
           
-          /* Espaciado */
+
+          /* Espaciado  fff*/
           mb-1
         ">
           {title}

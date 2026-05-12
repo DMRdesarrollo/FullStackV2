@@ -3,7 +3,7 @@ const API_URL = "https://fakestoreapi.com/products";
 
 export const getProducts = async () => {
   // TODO ESTUDIANTE:
-  // Reemplaza este retorno local por FakeStore API.
+  // Reemplaza este retorno local por FakeStore API...
   // Ejemplo esperado: GET https://fakestoreapi.com/products
   //return [...MOCK_PRODUCTS].sort((a, b) => Number(a.id) - Number(b.id));
  try {
