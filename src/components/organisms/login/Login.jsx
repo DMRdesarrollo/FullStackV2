@@ -120,7 +120,6 @@ const Login = () => {
                 className="absolute right-0 top-2 text-slate-300 cursor-pointer hover:text-blue-500 transition-colors"
               >
                 {showPassword ? (
-                  // Ojo abierto
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 
                     11-7 11-7-4-7-11-7zm0 12c-2.76 
@@ -128,7 +127,6 @@ const Login = () => {
                     5 2.24 5 5-2.24 5-5 5z" />
                   </svg>
                 ) : (
-                  // Ojo cerrado
                   <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M2.1 3.51 1 4.62l3.1 3.1C2.8 
                     9.39 1.73 11.1 1 12c1.73 4.39 
@@ -148,7 +146,6 @@ const Login = () => {
               </span>
             </div>
 
-            {/* Indicador de fuerza */}
             {passwordStrength && (
               <p className={`text-sm mt-1 ${strengthColor}`}>
                 Fuerza: {passwordStrength}
@@ -190,6 +187,14 @@ const Login = () => {
           </button>
 
         </form>
+
+        {/* DATOS DE PRUEBA */}
+        <div className="mt-10 text-center text-slate-500 text-sm">
+          <p className="font-semibold text-slate-600">Datos de prueba:</p>
+          <p>Email: <span className="font-medium">andres@example.com</span></p>
+          <p>Password: <span className="font-medium">password123</span></p>
+        </div>
+
       </div>
     </div>
   );
